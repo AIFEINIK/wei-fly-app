@@ -1,0 +1,84 @@
+<cu-custom bgColor="bg-gradual-blue">
+  <view slot="content">预约</view>
+</cu-custom>
+
+<view class="cu-bar bg-white solid-bottom">
+  <view class="action">
+    <text class="cuIcon-title text-blue"></text>备注
+  </view>
+</view>
+<view class='bg-white seat-container' style='height:{{seatContainerHeight}}px;'>
+  <view class="cu-list grid col-{{gridCol}} {{gridBorder?'':'no-border'}}">
+    <view class="cu-item {{seatOrder.selectedSeatNum[index].show?'bg-yellow':''}} light"
+          wx:for="{{seatList}}" wx:key
+          data-seatnum="{{item.num}}"
+          data-index="{{index}}"
+          data-seatid="{{item.seatId}}"
+          bindtap='handleOrderDialog'
+          bindtouchstart='seatTouchHandle'
+          bindtouchend='seatTouchHandle'>
+      <view class="cuIcon-{{item.icon}} text-{{item.color}}">
+        <view class="cu-tag badge" wx:if="{{item.badge > 1}}">
+          <block wx:if="{{item.badge > 1}}">{{item.badge>99?"99+":item.badge}}</block>
+        </view>
+      </view>
+      <text>{{item.num}}</text>
+    </view>
+  </view>
+</view>
+
+<view class="cu-modal {{seatOrderDialogVisible?'show':''}}">
+  <view class="cu-dialog">
+    <view class="cu-bar bg-white justify-end">
+      <view class="content">预约座位</view>
+      <view class="action" bindtap="hideSeatOrderDialog">
+        <text class="cuIcon-close text-red"></text>
+      </view>
+    </view>
+    <view class="padding-xl">
+      
+      <form>
+        <view class="cu-form-group">
+          <view class="title">座位号</view>
+          <input value='{{seatOrderForm.seatNum}}' disabled></input>
+        </view>
+
+        <view class="cu-form-group">
+          <view class="title">预约时间</view>
+          <picker mode="time" value="{{seatOrderForm.useTime}}" start="09:00" end="21:00" bindchange="orderTimeChange">
+            <view class="picker">
+              {{seatOrderForm.useTime}}
+            </view>
+          </picker>
+        </view>
+      </form>
+
+    </view>
+    <view class="cu-bar bg-white justify-end">
+      <view class="action">
+        <button class="cu-btn line-green text-green" bindtap="hideSeatOrderDialog">取消</button>
+        <button class="cu-btn bg-green margin-left" bindtap="seatOrderSubmit">确定</button>
+      </view>
+    </view>
+  </view>
+</view>
+
+<view class="cu-modal {{toastShow?'show':''}}">
+  <view class="cu-dialog">
+    <view class="cu-bar bg-white justify-end">
+      <view class="content">{{toastTitle}}</view>
+      <view class="action" bindtap="hideToast">
+        <text class="cuIcon-close text-red"></text>
+      </view>
+    </view>
+    <view class="padding-xl">
+      {{toastContent}}
+    </view>
+  </view>
+</view>
+
+<view class='load-progress {{loadProgress!=0?"show":"hide"}}' style="top:{{CustomBar}}px;">
+  <view class='load-progress-bar bg-green' style="transform: translate3d(-{{100-loadProgress}}%, 0px, 0px);"></view>
+  <view class='load-progress-spinner text-green'></view>
+</view>
+

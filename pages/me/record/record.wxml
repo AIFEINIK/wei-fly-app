@@ -1,0 +1,62 @@
+<cu-custom bgColor="bg-gradual-green" isBack="{{true}}">
+  <view slot="backText">返回</view>
+  <view slot="content">消费记录</view>
+</cu-custom>
+
+<view class="cu-timeline">
+  <view class="cu-item text-green" wx:for="{{recordList}}" wx:key>
+      <view class="bg-gradual-green content shadow">
+        <view class="cu-capsule radius">
+          <view class="cu-tag bg-white text-green">{{item.createTime}}</view>
+        </view>
+
+        <view class="flex justify-between solid-bottom">
+          <view class="padding-sm margin-xs radius">订单号</view>
+          <view class="padding-sm margin-xs radius">{{item.orderCode}}</view>
+        </view>
+
+        <view class="flex justify-between solid-bottom">
+          <view class="padding-sm margin-xs radius">会员卡编号</view>
+          <view class="padding-sm margin-xs radius">{{item.cardCode}}</view>
+        </view>
+
+        <view class="flex justify-between solid-bottom">
+          <view class="padding-sm margin-xs radius">座位号</view>
+          <view class="padding-sm margin-xs radius">{{item.seatNum}}</view>
+        </view>
+
+        <view class="flex justify-between solid-bottom">
+          <view class="padding-sm margin-xs radius">座位类型</view>
+          <view class="padding-sm margin-xs radius" wx:if="{{item.seatType == 'ONE_SEAT'}}">单座</view>
+          <view class="padding-sm margin-xs radius" wx:elif="{{item.seatType == 'TWO_SEAT'}}">双座</view>
+          <view class="padding-sm margin-xs radius" wx:elif="{{item.seatType == 'THREE_SEAT'}}">三座</view>
+        </view>
+
+        <view class="flex justify-between solid-bottom">
+          <view class="padding-sm margin-xs radius">消费次数</view>
+          <view class="padding-sm margin-xs radius">{{item.consumeNum}}</view>
+        </view>
+        
+      </view>   
+    </view>
+</view>
+<view class="cu-load bg-white {{isLoad?'loading':'over'}}" wx:if="recordLoadVisible"></view>
+
+<view class="cu-modal {{toastShow?'show':''}}">
+    <view class="cu-dialog">
+        <view class="cu-bar bg-white justify-end">
+            <view class="content">{{toastTitle}}</view>
+            <view class="action" bindtap="hideToast">
+                <text class="cuIcon-close text-red"></text>
+            </view>
+        </view>
+        <view class="padding-xl">
+            {{toastContent}}
+        </view>
+    </view>
+</view>
+
+<view class='load-progress {{loadProgress!=0?"show":"hide"}}' style="top:{{CustomBar}}px;">
+  <view class='load-progress-bar bg-green' style="transform: translate3d(-{{100-loadProgress}}%, 0px, 0px);"></view>
+  <view class='load-progress-spinner text-green'></view>
+</view>

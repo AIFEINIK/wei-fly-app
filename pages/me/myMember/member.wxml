@@ -1,0 +1,116 @@
+<scroll-view scroll-y class="scrollPage">
+  <cu-custom bgColor="bg-gradual-green" isBack="{{true}}">
+    <view slot="backText">返回</view>
+    <view slot="content">我的会员</view>
+  </cu-custom>
+
+    <view class="cu-card">
+        <view class="cu-item bg-img shadow-blur" style="background-image:url({{cardInfo.img}})" >
+            <view class="cardTitle">
+                {{cardInfo.title}}
+            </view>
+            <view class="padding-bottom-lg text-center">
+                <text class="text-white">{{cardInfo.cardCode}}</text>
+            </view>
+        </view>
+    </view>
+
+    <view class="cu-list menu card-menu margin-top margin-bottom shadow-lg radius">
+        <view class="cu-item">
+            <view class="content">
+                <text class="cuIcon-emojiflashfill text-pink"></text>
+                <text class="text-grey">绑定时间</text>
+            </view>
+            <view class="action">
+                <text class="text-grey text-sm">{{cardInfo.createTime}}</text>
+            </view>
+        </view>
+
+        <view class="cu-item">
+            <view class="content">
+                <text class="cuIcon-emojiflashfill text-pink"></text>
+                <text class="text-grey">会员卡号</text>
+            </view>
+            <view class="action">
+                <text class="text-grey text-sm">{{cardInfo.cardCode}}</text>
+            </view>
+        </view>
+
+        <view class="cu-item">
+            <view class="content">
+                <text class="cuIcon-emojiflashfill text-pink"></text>
+                <text class="text-grey">剩余次数</text>
+            </view>
+            <view class="action">
+                <text class="text-grey text-sm">{{cardInfo.canUseNum}}</text>
+            </view>
+        </view>
+
+        <view class="cu-item">
+            <view class="content">
+                <text class="cuIcon-emojiflashfill text-pink"></text>
+                <text class="text-grey">激活状态</text>
+            </view>
+            <view class="action">
+                <text class="text-grey text-sm">{{cardInfo.activeFlag}}</text>
+            </view>
+        </view>
+
+        <view class="cu-item arrow" bindtap="unbindCardTab">
+            <view class="content">
+                <text class="cuIcon-emojiflashfill text-pink"></text>
+                <text class="text-grey">解绑</text>
+            </view>
+        </view>
+    </view>
+  
+  <view class="cu-tabbar-height"></view>
+</scroll-view>
+
+<view class="cu-modal {{toastShow?'show':''}}">
+    <view class="cu-dialog">
+        <view class="cu-bar bg-white justify-end">
+            <view class="content">{{toastTitle}}</view>
+            <view class="action" bindtap="hideToast">
+                <text class="cuIcon-close text-red"></text>
+            </view>
+        </view>
+        <view class="padding-xl">
+            {{toastContent}}
+        </view>
+    </view>
+</view>
+
+<view class="cu-modal {{confirmToastShow?'show':''}}">
+    <view class="cu-dialog">
+        <view class="cu-bar bg-white justify-end">
+            <view class="content">{{confirmToastTitle}}</view>
+        </view>
+        <view class="padding-xl">
+            {{confirmToastContent}}
+        </view>
+        <view class="cu-bar bg-white justify-end">
+            <view class="action">
+                <button class="cu-btn margin-left" bindtap="confirmToastOk">确定</button>
+                <button class="cu-btn bg-green margin-left" bindtap="hideConfirmToast">取消</button>
+            </view>
+        </view>
+    </view>
+</view>
+
+<view class="cu-modal {{unbindCardToastShow?'show':''}}">
+    <view class="cu-dialog">
+        <view class="cu-bar bg-white justify-end">
+            <view class="content">消息提示</view>
+        </view>
+        <view class="padding-xl">
+            解绑成功
+        </view>
+        <view class="cu-bar bg-white justify-center">
+            <view class="action">
+                <button class="cu-btn bg-green margin-left" bindtap="hideUnbindCardToast">确定</button>
+
+            </view>
+        </view>
+    </view>
+</view>

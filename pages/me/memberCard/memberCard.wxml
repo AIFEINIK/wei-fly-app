@@ -1,0 +1,60 @@
+<scroll-view scroll-y class="scrollPage">
+  <cu-custom bgColor="bg-gradual-green" isBack="{{true}}">
+    <view slot="backText">返回</view>
+    <view slot="content">领取会员</view>
+  </cu-custom>
+
+  <view class="cu-bar bg-white solid-bottom margin-top-sm">
+    <view class="action">
+      <text class="cuIcon-title text-blue text-xl"></text>会员卡领取步骤
+    </view>
+  </view>
+  <view class="bg-white padding">
+    <view class="cu-steps">
+      <view class="cu-item {{index > step_num ?'':'text-blue'}}" wx:for="{{numList}}" wx:key>
+        <text class="num" data-index="{{index + 1}}"></text>
+        {{item.name}}
+      </view>
+    </view>
+  </view>
+  <view wx:for="{{cardList}}" wx:key>
+    <view class="cu-bar bg-white solid-bottom margin-top-sm">
+      <view class="action">
+        <text class="cuIcon-title text-blue text-xl"></text>{{item.title}}介绍
+      </view>
+    </view>
+
+    <view class='bg-white padding'>
+      <view class='margin-top-sm'>
+        {{item.describe}}
+      </view>
+    </view>
+
+    <view class="cu-card">
+      <view class="cu-item bg-img shadow-blur" style="background-image:url({{item.img}})" data-cardType='{{item.type}}' >
+        <view class="cardTitle">
+          {{item.title}}
+        </view>
+        <view class="flex flex-direction">
+          <view class="cu-btn bg-gray" data-cardType='{{item.type}}' bindtap='bindCard'>点击领取</view>
+        </view>
+      </view>
+    </view>
+  </view>
+  
+  <view class="cu-tabbar-height"></view>
+</scroll-view>
+
+<view class="cu-modal {{toastShow?'show':''}}">
+    <view class="cu-dialog">
+        <view class="cu-bar bg-white justify-end">
+            <view class="content">{{toastTitle}}</view>
+            <view class="action" bindtap="hideToast">
+                <text class="cuIcon-close text-red"></text>
+            </view>
+        </view>
+        <view class="padding-xl">
+            {{toastContent}}
+        </view>
+    </view>
+</view>
