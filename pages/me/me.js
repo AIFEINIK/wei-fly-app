@@ -11,7 +11,12 @@ Page({
     userInfo: {},
     hasUserInfo: false,
     accreditDialogVisible: false,
-    canIUse: wx.canIUse('button.open-type.getUserInfo')
+    canIUse: wx.canIUse('button.open-type.getUserInfo'),
+    getMemberTouchshow:false,
+    meMemberTouchshow:false,
+    meOrderTouchshow:false,
+    recordTouchshow:false,
+    ideaTouchshow:false
   },
 
   meMemberTap: function () {
@@ -22,6 +27,20 @@ Page({
 
     }).catch(e => {
       this.toast('消息提示', '对不起，你还未领取会员卡，请先领取会员')
+    })
+  },
+
+  meListMenuTouchStart(o) {
+    var meId = o.currentTarget.dataset.meid
+    this.setData({
+      [meId] : true
+    })
+  },
+
+  meListMenuTouchEnd(o) {
+    var meId = o.currentTarget.dataset.meid
+    this.setData({
+      [meId]: false
     })
   },
 

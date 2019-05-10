@@ -4,7 +4,7 @@
 
 <view class="cu-bar bg-white solid-bottom">
   <view class="action">
-    <text class="cuIcon-title text-blue"></text>备注
+    <text class="cuIcon-title text-blue"></text>预约介绍
   </view>
 </view>
 <view class='bg-white seat-container' style='height:{{seatContainerHeight}}px;'>
@@ -80,5 +80,11 @@
 <view class='load-progress {{loadProgress!=0?"show":"hide"}}' style="top:{{CustomBar}}px;">
   <view class='load-progress-bar bg-green' style="transform: translate3d(-{{100-loadProgress}}%, 0px, 0px);"></view>
   <view class='load-progress-spinner text-green'></view>
+</view>
+
+<view class='cu-load load-modal' wx:if="{{loadModal}}">
+  <!-- <view class='cuIcon-emojifill text-orange'></view> -->
+  <image src='/images/logo.png' class='png' mode='aspectFit'></image>
+  <view class='gray-text'>加载中...</view>
 </view>
 

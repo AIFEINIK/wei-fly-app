@@ -24,6 +24,13 @@ App({
               // 可以将 res 发送给后台解码出 unionId
               this.globalData.userInfo = res.userInfo
 
+              //修改用户信息
+              user.editUser(res.userInfo).then(res => {
+                  console.log('修改用户信息成功')
+
+              }).catch(e => {
+                console.log('修改用户信息失败:' +e)
+              })
               // 由于 getUserInfo 是网络请求，可能会在 Page.onLoad 之后才返回
               // 所以此处加入 callback 以防止这种情况
               if (this.userInfoReadyCallback) {

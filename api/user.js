@@ -23,3 +23,7 @@ export function login() {
     }
   })
 }
+
+export function editUser(userForm){
+  return req.post('user/editUser', userForm)
+}

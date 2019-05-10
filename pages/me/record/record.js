@@ -83,24 +83,21 @@ Page({
         })
       }
       this.pullDownRefreshComplete()
-      clearInterval(this.data.loadProcessTimeoutNum)
-      this.setData({
-        loadProgress: 100
-      })
-      this.hideLoadProgress()
+      this.loadProcessComplete()
       this.setData({
         recordCount: res.data.total,
         recordList: res.data.datas
       })
 
     }).catch(e => {
-      this.hideLoadProgress()
+      this.loadProcessComplete()
       this.pullDownRefreshComplete()
       this.toast('消息提示', e)
     })
   },
 
-  hideLoadProgress() {
+  loadProcessComplete() {
+    clearInterval(this.data.loadProcessTimeoutNum)
     this.setData({
       loadProgress: 0
     })

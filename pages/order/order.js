@@ -25,7 +25,8 @@ Page({
       seatNum:''
     },
     CustomBar: app.globalData.CustomBar,
-    loadProgress: 0
+    loadProgress: 0,
+    loadModal: false
   },
 
   /**
@@ -36,16 +37,15 @@ Page({
   },
 
   searchSeatList: function() {
+    this.showLoadModal()
     seat.listSeat().then(res => {
+      this.hideLoadModal()
       this.handleSeatList(res.data.datas)
 
-    }).catch(res => {
-      console.log(res)
-      wx.showToast({
-        title: '网络错误',
-        image: '../../images/con_err.png',
-        duration: 2000
-      })
+    }).catch(e => {
+      this.hideLoadModal()
+      console.log(e)
+      this.toast('消息提示', e)
     })
   },
 
@@ -101,6 +101,18 @@ Page({
     })
   },
 
+  hideLoadModal() {
+    this.setData({
+      loadModal: false
+    })
+  },
+
+  showLoadModal() {
+    this.setData({
+      loadModal: true
+    })
+  },
+
   hideToast() {
     this.setData({
       toastShow: false
@@ -146,22 +158,19 @@ Page({
     this.loadProgress()
     seat.listSeat().then(res => {
       this.pullDownRefreshComplete()
-      clearInterval(this.data.loadProcessTimeoutNum)
-      this.setData({
-        loadProgress:100
-      })
-      this.hideLoadProgress()
+      this.loadProcessComplete()
       this.handleSeatList(res.data.datas)
 
     }).catch(e => {
       console.log('座位信息获取出错：' + e)
-      this.hideLoadProgress()
+      this.loadProcessComplete()
       this.pullDownRefreshComplete()
       this.toast('错误提示', e)
     })
   },
 
-  hideLoadProgress() {
+  loadProcessComplete() {
+    clearInterval(this.data.loadProcessTimeoutNum)
     this.setData({
       loadProgress: 0
     })

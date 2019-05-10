@@ -31,34 +31,56 @@
       </view> -->
     </view>
   </view>
+
   <view class="cu-list menu card-menu margin-top margin-bottom shadow-lg radius">
-    <view class="cu-item arrow">
+    <view class="cu-item arrow {{getMemberTouchshow?'bg-yellow':''}}" 
+      data-meid="getMemberTouchshow"
+      bindtouchstart="meListMenuTouchStart"
+      bindtouchend="meListMenuTouchEnd">
       <navigator class="content" url="/pages/me/memberCard/memberCard" hover-class="none">
-        <image src="/images/logo.png" class="png" mode="aspectFit"></image>
-        <text class="text-grey">领取会员</text>
+        <button class="content cu-btn">
+          <text class="cuIcon-cart text-red"></text>
+          <text class="text-grey">领取会员</text>
+        </button>
       </navigator>
     </view>
 
-    <view class="cu-item arrow">
-      <view class="content" bindtap="meMemberTap">
-        <image src="/images/logo.png" class="png" mode="aspectFit"></image>
+    <view class="cu-item arrow {{meMemberTouchshow?'bg-yellow':''}}" 
+      bindtap="meMemberTap"
+      data-meid="meMemberTouchshow"
+      bindtouchstart="meListMenuTouchStart"
+      bindtouchend="meListMenuTouchEnd">
+      <button class="content cu-btn">
+        <text class="cuIcon-addressbook text-blue"></text>
         <text class="text-grey">我的会员</text>
-      </view>
+      </button>
     </view>
     
-    <view class="cu-item arrow">
-      <view class="content" bindtap="myOrderTap">
-        <text class="cuIcon-formfill text-green"></text>
+    <view class="cu-item arrow {{meOrderTouchshow?'bg-yellow':''}}" 
+      bindtap="myOrderTap"
+      data-meid="meOrderTouchshow"
+      bindtouchstart="meListMenuTouchStart"
+      bindtouchend="meListMenuTouchEnd">
+      <button class="content cu-btn">
+        <text class="cuIcon-remind text-green"></text>
         <text class="text-grey">我的预约</text>
-      </view>
+      </button>
     </view>
-    <view class="cu-item arrow">
+    <view class="cu-item arrow {{recordTouchshow?'bg-yellow':''}}"
+      data-meid="recordTouchshow"
+      bindtouchstart="meListMenuTouchStart"
+      bindtouchend="meListMenuTouchEnd">
       <navigator class="content" url="/pages/me/record/record" hover-class="none">
-        <text class="cuIcon-formfill text-red"></text>
-        <text class="text-grey">消费记录</text>
+        <button class="content cu-btn">
+          <text class="cuIcon-formfill text-red"></text>
+          <text class="text-grey">消费记录</text>
+        </button>
       </navigator>
     </view>
-    <view class="cu-item arrow">
+    <view class="cu-item arrow bg-red"
+      data-meid="ideaTouchshow"
+      bindtouchstart="meListMenuTouchStart"
+      bindtouchend="meListMenuTouchEnd">
       <button class="cu-btn content" open-type="feedback">
         <text class="cuIcon-writefill text-cyan"></text>
         <text class="text-grey">意见反馈</text>
