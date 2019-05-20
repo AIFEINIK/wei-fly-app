@@ -2852,6 +2852,10 @@ scroll-view.cu-steps .cu-item {
 	flex: 3;
 }
 
+.flex-four {
+	flex: 4;
+}
+
 .flex-direction {
 	flex-direction: column;
 }
@@ -3031,6 +3035,10 @@ scroll-view.cu-steps .cu-item {
 
 .margin-xs {
 	margin: 10rpx;
+}
+
+.margin-5 {
+	margin: 5rpx;
 }
 
 .margin-sm {

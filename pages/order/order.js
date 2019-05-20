@@ -8,6 +8,28 @@ Page({
    * 页面的初始数据
    */
   data: {
+    seatArr:[
+        [
+            {num:'01', seatId:'01', locked:true, badge:1},
+            {num:'02', seatId:'02', locked:true, badge:1},
+            {num:'03', seatId:'03', locked:false, badge:4},
+            {num:'04', seatId:'04', locked:true, badge:1},
+            {num:'05', seatId:'05', locked:true, badge:1}
+        ],
+        [
+            {num:'06', seatId:'06', locked:true, badge:3},
+            {num:'07', seatId:'07', locked:true, badge:1},
+            {num:'08', seatId:'08', locked:false, badge:1},
+            {num:'09', seatId:'09', locked:true, badge:1}
+        ],
+        [
+            {num:'11', seatId:'11', locked:true, badge:2},
+            {num:'12', seatId:'12', locked:true, badge:1},
+            {num:'13', seatId:'13', locked:false, badge:1},
+            {num:'14', seatId:'14', locked:true, badge:1},
+            {num:'15', seatId:'15', locked:true, badge:1}
+        ],
+    ],
     seatContainerHeight: app.globalData.windowHeight,
     seatList: [],
     seatOrder:{
@@ -19,7 +41,7 @@ Page({
       selectedSeatNum:[]
     },
     gridCol: 4,
-    gridBorder: true,
+    gridBorder: false,
     seatOrderForm:{
       useTime: '09:00',
       seatNum:''
@@ -57,9 +79,10 @@ Page({
         [selected_seat_num]: false
       })
       tmpSeatList.push({
-        icon: 'brandfill',
-        color: obj.locked === 'YES' ? 'red' : 'green',
+        icon: obj.locked === 'YES' ? '/images/seat_order.png' : '/images/seat.png',
+        // color: obj.locked === 'YES' ? 'red' : 'green',
         badge: this.data.seatOrder.seatType[obj.seatType],
+        locked: obj.locked === 'YES',
         num: obj.num,
         seatId: obj.id
       })
@@ -79,6 +102,11 @@ Page({
   },
 
   handleOrderDialog: function (o) {
+    if (o.currentTarget.dataset.locked){
+      this.toast('消息提示', '对不起,该座位已经被预约了！')
+      return
+    }
+
     //检查是否为会员
     var user = wx.getStorageSync('user')
     if (user && user.roleType === 'CUSTOMER'){

@@ -1,1 +1,5 @@
 /* pages/order/order.wxss */
+/*.seat_img{*/
+    /*width: 90rpx;*/
+    /*height: 90rpx;*/
+/*}*/

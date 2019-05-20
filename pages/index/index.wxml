@@ -9,18 +9,88 @@
     </swiper-item>
   </swiper>
 
-  <view class="cu-bar bg-white solid-bottom">
-    <view class="action">
-      <text class="cuIcon-title text-blue text-xl"></text>简介
+  <view class="bg-white solid-bottom padding-bottom-xs">
+    <view class="padding-left padding-top bg-white text-black text-bold text-xl">
+      爱上米饭
+    </view>
+    <view class="bg-white padding-left">
+      <view class="text-left margin-top-sm text-lg">营业时间：8:30 - 10:30</view>
+      <view class="text-left margin-top-sm text-lg">
+        <view class="cu-tag line-green">吃饭</view>
+        <view class="cu-tag line-green">睡觉</view>
+        <view class="cu-tag line-green">看书</view>
+        <view class="cu-tag line-green">听歌</view>
+      </view>
+
+      <view class="flex p-xs mb-sm align-center text-lg">
+        <view class="flex-sub margin-top-sm radius">
+          <text class="cuIcon-locationfill text-orange"></text>
+        </view>
+        <view class="flex-treble padding-sm margin-top-sm margin-right-sm radius">
+          <view class="padding-left-xs" style="word-wrap: normal; width: 200px;">西安市高新区丈八北路3号线地铁口唐楠香榭B座3301</view>
+        </view>
+        <view class="flex-treble margin-top-sm margin-right-sm radius text-center text-xxl" bindtap="phoneTab">
+          <text class="cuIcon-phone text-green"></text>
+        </view>
+      </view>
+
     </view>
   </view>
+
+  <view class="flex p-xs mb-sm bg-white">
+    <view class="flex-sub padding-sm margin-xs radius text-center">
+      <image src="/images/seat_order.png" class="cu-avatar seat_img radius" style="background-color: #ffffff"></image>
+      <text>01</text>
+    </view>
+    <view class="flex-sub padding-sm margin-xs radius text-center">
+      <image src="/images/seat_order.png" class="cu-avatar seat_img radius" style="background-color: #ffffff"></image>
+    </view>
+    <view class="flex-sub padding-sm margin-xs radius text-center">
+      <image src="/images/seat_order.png" class="cu-avatar seat_img radius" style="background-color: #ffffff"></image>
+    </view>
+    <view class="flex-sub padding-sm margin-xs radius text-center">
+      <image src="/images/seat_order.png" class="cu-avatar seat_img radius" style="background-color: #ffffff"></image>
+    </view>
+    <view class="flex-twice padding-sm margin-xs radius text-center solids shadow shadow-lg">
+      <image src="/images/seat_order.png" class="cu-avatar seat_img radius" style="background-color: #ffffff"></image>
+      <image src="/images/seat_order.png" class="cu-avatar seat_img radius" style="background-color: #ffffff"></image>
+      <view>
+        <image src="/images/seat_order.png" class="cu-avatar seat_img radius" style="background-color: #ffffff"></image>
+        <image src="/images/seat_order.png" class="cu-avatar seat_img radius" style="background-color: #ffffff"></image>
+      </view>
+      <view>
+        <text>01</text>
+      </view>
+    </view>
+  </view>
+
+  <view class="flex p-xs mb-sm bg-white">
+    <view class="flex-treble padding-sm margin-xs radius text-center solids shadow shadow-lg">
+      <image src="/images/seat_order.png" class="cu-avatar seat_img radius" style="background-color: #ffffff"></image>
+      <image src="/images/seat_order.png" class="cu-avatar seat_img radius" style="background-color: #ffffff"></image>
+      <image src="/images/seat_order.png" class="cu-avatar seat_img radius" style="background-color: #ffffff"></image>
+      <view>
+        <text>01</text>
+      </view>
+    </view>
+    <view class="flex-sub padding-sm margin-xs radius">
+      <image src="/images/seat_order.png" class="cu-avatar seat_img margin-xs radius" style="background-color: #ffffff"></image>
+    </view>
+    <view class="flex-sub padding-sm margin-xs radius">
+      <image src="/images/seat_order.png" class="cu-avatar seat_img margin-xs radius" style="background-color: #ffffff"></image>
+    </view>
+    <view class="flex-sub padding-sm margin-xs radius">
+      <image src="/images/seat_order.png" class="cu-avatar seat_img margin-xs radius" style="background-color: #ffffff"></image>
+    </view>
+  </view>
+
   <view class="padding bg-white">
-    <view class='margin-top-sm'>
+    <view class='text-lg'>
     该项目是我个人开发的一款高颜值的微信小程序组件库。这个项目不仅有一些漂亮的基础元素，还有一些实用的组件。扩展中心也会不定期更新一些小程序的解决方案，或者你有一些好的想法可以在GitHub里提交给我，我会加入到扩展里。
     </view>
-    <view class='margin-top-sm'>
+    <view class='margin-top-sm text-lg'>
     项目是开源的，不收取任何费用，如果这个项目有帮到你，或者你觉得很赞，可以在GitHub里扫描赞赏码支持一下！</view>
-    <view class='margin-top-sm'>
+    <view class='margin-top-sm text-lg'>
     该项目你可以用到除组件库小程序的任何项目。作者我也是花了时间和精力的，我不希望你拷贝一份，做一些修改发布就变成了一个独立的项目，当然！扩展再发布是可以的，但前提是注明一下我这个原作者٩(๑❛ᴗ❛๑)۶
      该项目你可以用到除组件库小程序的任何项目。作者我也是花了时间和精力的，我不希望你拷贝一份，做一些修改发布就变成了一个独立的项目，当然！扩展再发布是可以的，但前提是注明一下我这个原作者٩(๑❛ᴗ❛๑)۶
     </view>

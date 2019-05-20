@@ -7,25 +7,108 @@
     <text class="cuIcon-title text-blue"></text>预约介绍
   </view>
 </view>
+
 <view class='bg-white seat-container' style='height:{{seatContainerHeight}}px;'>
-  <view class="cu-list grid col-{{gridCol}} {{gridBorder?'':'no-border'}}">
-    <view class="cu-item {{seatOrder.selectedSeatNum[index].show?'bg-yellow':''}} light"
-          wx:for="{{seatList}}" wx:key
-          data-seatnum="{{item.num}}"
+  <view class="flex p-xs mb-sm bg-white"
+    wx:for="{{seatArr}}" wx:key>
+    <view class="flex-sub padding-sm margin-xs radius text-center"
+          wx:for="{{item}}" wx:for-item="subItem" wx:key="subItem.id"
+          data-seatnum="{{subItem.num}}"
           data-index="{{index}}"
-          data-seatid="{{item.seatId}}"
+          data-seatid="{{subItem.seatId}}"
+          data-locked="{{subItem.locked}}"
           bindtap='handleOrderDialog'
           bindtouchstart='seatTouchHandle'
-          bindtouchend='seatTouchHandle'>
-      <view class="cuIcon-{{item.icon}} text-{{item.color}}">
-        <view class="cu-tag badge" wx:if="{{item.badge > 1}}">
-          <block wx:if="{{item.badge > 1}}">{{item.badge>99?"99+":item.badge}}</block>
-        </view>
-      </view>
-      <text>{{item.num}}</text>
+          bindtouchend='seatTouchHandle'
+          wx:if="{{subItem.badge == 1}}">
+      <image src="/images/seat_order.png" class="cu-avatar seat_img radius" style="background-color: #ffffff"></image>
+      <text>{{subItem.num}}</text>
     </view>
+
+    <view class="flex-twice padding-sm margin-xs radius text-center solids shadow shadow-lg"
+          wx:for="{{item}}" wx:for-item="subItem" wx:key="subItem.id"
+          data-seatnum="{{subItem.num}}"
+          data-index="{{index}}"
+          data-seatid="{{subItem.seatId}}"
+          data-locked="{{subItem.locked}}"
+          bindtap='handleOrderDialog'
+          bindtouchstart='seatTouchHandle'
+          bindtouchend='seatTouchHandle'
+          wx:if="{{subItem.badge == 2}}">
+      <image src="/images/seat_order.png" class="cu-avatar seat_img radius" style="background-color: #ffffff"></image>
+      <image src="/images/seat_order.png" class="cu-avatar seat_img radius" style="background-color: #ffffff"></image>
+      <view>
+        <text>{{subItem.num}}</text>
+      </view>
+    </view>
+
+    <view class="flex-treble padding-sm margin-xs radius text-center solids shadow shadow-lg"
+          wx:for="{{item}}" wx:for-item="subItem" wx:key="subItem.id"
+          data-seatnum="{{subItem.num}}"
+          data-index="{{index}}"
+          data-seatid="{{subItem.seatId}}"
+          data-locked="{{subItem.locked}}"
+          bindtap='handleOrderDialog'
+          bindtouchstart='seatTouchHandle'
+          bindtouchend='seatTouchHandle'
+          wx:if="{{subItem.badge == 3}}">
+      <image src="/images/seat_order.png" class="cu-avatar seat_img radius" style="background-color: #ffffff"></image>
+      <image src="/images/seat_order.png" class="cu-avatar seat_img radius" style="background-color: #ffffff"></image>
+      <image src="/images/seat_order.png" class="cu-avatar seat_img radius" style="background-color: #ffffff"></image>
+      <view>
+        <text>{{subItem.num}}</text>
+      </view>
+    </view>
+
+    <view class="flex-twice padding-sm margin-xs radius text-center solids shadow shadow-lg"
+          wx:for="{{item}}" wx:for-item="subItem" wx:key="subItem.id"
+          data-seatnum="{{subItem.num}}"
+          data-index="{{index}}"
+          data-seatid="{{subItem.seatId}}"
+          data-locked="{{subItem.locked}}"
+          bindtap='handleOrderDialog'
+          bindtouchstart='seatTouchHandle'
+          bindtouchend='seatTouchHandle'
+          wx:if="{{subItem.badge == 4}}">
+      <image src="/images/seat_order.png" class="cu-avatar seat_img radius" style="background-color: #ffffff"></image>
+      <image src="/images/seat_order.png" class="cu-avatar seat_img radius" style="background-color: #ffffff"></image>
+      <view>
+        <image src="/images/seat_order.png" class="cu-avatar seat_img radius" style="background-color: #ffffff"></image>
+        <image src="/images/seat_order.png" class="cu-avatar seat_img radius" style="background-color: #ffffff"></image>
+      </view>
+      <view>
+        <text>{{subItem.num}}</text>
+      </view>
+    </view>
+
   </view>
 </view>
+
+
+
+<!--<view class='bg-white seat-container' style='height:{{seatContainerHeight}}px;'>-->
+  <!--<view class="cu-list grid col-{{gridCol}} {{gridBorder?'':'no-border'}}">-->
+    <!--<view class="cu-item light"-->
+          <!--wx:for="{{seatList}}" wx:key-->
+          <!--data-seatnum="{{item.num}}"-->
+          <!--data-index="{{index}}"-->
+          <!--data-seatid="{{item.seatId}}"-->
+          <!--data-locked="{{item.locked}}"-->
+          <!--bindtap='handleOrderDialog'-->
+          <!--bindtouchstart='seatTouchHandle'-->
+          <!--bindtouchend='seatTouchHandle'>-->
+
+      <!--<view class="padding flex justify-between align-center">-->
+        <!--<image src="{{(item.locked || !seatOrder.selectedSeatNum[index].show) ? item.icon: '/images/seat_select.png'}}" class="cu-avatar radius" style="background-color: #ffffff">-->
+          <!--<view class="cu-tag badge" wx:if="{{item.badge > 1}}">-->
+            <!--<block wx:if="{{item.badge > 1}}">{{item.badge>99?"99+":item.badge}}</block>-->
+          <!--</view>-->
+        <!--</image>-->
+      <!--</view>-->
+      <!--<text>{{item.num}}</text>-->
+    <!--</view>-->
+  <!--</view>-->
+<!--</view>-->
 
 <view class="cu-modal {{seatOrderDialogVisible?'show':''}}">
   <view class="cu-dialog">
