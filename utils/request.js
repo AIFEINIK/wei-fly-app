@@ -1,5 +1,5 @@
-// const BASE_API_URL = 'http://localhost:10300'
-const BASE_API_URL = 'https://www.feinik.club:10300'
+const BASE_API_URL = 'http://localhost:10300'
+// const BASE_API_URL = 'https://www.feinik.club:10300'
 
 export function post (url, data) {
   return request(url, 'POST', data)

@@ -36,7 +36,8 @@ Page({
       seatType:{
         ONE_SEAT: '1',
         TWO_SEAT: '2',
-        THREE_SEAT: '3'
+        THREE_SEAT: '3',
+        FOUR_SEAT: '4'
       },
       selectedSeatNum:[]
     },
