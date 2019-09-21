@@ -37,62 +37,14 @@
     </view>
   </view>
 
-  <view class="flex p-xs mb-sm bg-white">
-    <view class="flex-sub padding-sm margin-xs radius text-center">
-      <image src="/images/seat_order.png" class="cu-avatar seat_img radius" style="background-color: #ffffff"></image>
-      <text>01</text>
-    </view>
-    <view class="flex-sub padding-sm margin-xs radius text-center">
-      <image src="/images/seat_order.png" class="cu-avatar seat_img radius" style="background-color: #ffffff"></image>
-    </view>
-    <view class="flex-sub padding-sm margin-xs radius text-center">
-      <image src="/images/seat_order.png" class="cu-avatar seat_img radius" style="background-color: #ffffff"></image>
-    </view>
-    <view class="flex-sub padding-sm margin-xs radius text-center">
-      <image src="/images/seat_order.png" class="cu-avatar seat_img radius" style="background-color: #ffffff"></image>
-    </view>
-    <view class="flex-twice padding-sm margin-xs radius text-center solids shadow shadow-lg">
-      <image src="/images/seat_order.png" class="cu-avatar seat_img radius" style="background-color: #ffffff"></image>
-      <image src="/images/seat_order.png" class="cu-avatar seat_img radius" style="background-color: #ffffff"></image>
-      <view>
-        <image src="/images/seat_order.png" class="cu-avatar seat_img radius" style="background-color: #ffffff"></image>
-        <image src="/images/seat_order.png" class="cu-avatar seat_img radius" style="background-color: #ffffff"></image>
-      </view>
-      <view>
-        <text>01</text>
-      </view>
-    </view>
-  </view>
-
-  <view class="flex p-xs mb-sm bg-white">
-    <view class="flex-treble padding-sm margin-xs radius text-center solids shadow shadow-lg">
-      <image src="/images/seat_order.png" class="cu-avatar seat_img radius" style="background-color: #ffffff"></image>
-      <image src="/images/seat_order.png" class="cu-avatar seat_img radius" style="background-color: #ffffff"></image>
-      <image src="/images/seat_order.png" class="cu-avatar seat_img radius" style="background-color: #ffffff"></image>
-      <view>
-        <text>01</text>
-      </view>
-    </view>
-    <view class="flex-sub padding-sm margin-xs radius">
-      <image src="/images/seat_order.png" class="cu-avatar seat_img margin-xs radius" style="background-color: #ffffff"></image>
-    </view>
-    <view class="flex-sub padding-sm margin-xs radius">
-      <image src="/images/seat_order.png" class="cu-avatar seat_img margin-xs radius" style="background-color: #ffffff"></image>
-    </view>
-    <view class="flex-sub padding-sm margin-xs radius">
-      <image src="/images/seat_order.png" class="cu-avatar seat_img margin-xs radius" style="background-color: #ffffff"></image>
-    </view>
-  </view>
-
   <view class="padding bg-white">
     <view class='text-lg'>
-    该项目是我个人开发的一款高颜值的微信小程序组件库。这个项目不仅有一些漂亮的基础元素，还有一些实用的组件。扩展中心也会不定期更新一些小程序的解决方案，或者你有一些好的想法可以在GitHub里提交给我，我会加入到扩展里。
+    共享自习室是位于写字楼内的收费自习室。这种收费自习室，成为了不少需要参加职业考试的白领或专心考研的学生的新选择
     </view>
     <view class='margin-top-sm text-lg'>
-    项目是开源的，不收取任何费用，如果这个项目有帮到你，或者你觉得很赞，可以在GitHub里扫描赞赏码支持一下！</view>
+    即将考试，图书馆要提前“抢座”、家里看书总要分心，咖啡厅人来人往噪音嘈杂，如果提供一个安静的自习室，每个类似于工作间的独立“格子间”需要每小时付费5.5元至10元不等，你会愿意付费看书吗。</view>
     <view class='margin-top-sm text-lg'>
-    该项目你可以用到除组件库小程序的任何项目。作者我也是花了时间和精力的，我不希望你拷贝一份，做一些修改发布就变成了一个独立的项目，当然！扩展再发布是可以的，但前提是注明一下我这个原作者٩(๑❛ᴗ❛๑)۶
-     该项目你可以用到除组件库小程序的任何项目。作者我也是花了时间和精力的，我不希望你拷贝一份，做一些修改发布就变成了一个独立的项目，当然！扩展再发布是可以的，但前提是注明一下我这个原作者٩(๑❛ᴗ❛๑)۶
+    自习中心的收费标准根据座位类型不同收费不同，联排座会员价为每小时5.5元，独立座每小时6.5元，而非会员价则显得更贵一些，联排座非会员价为每小时8元，独立座每小时10元。“针对长期学习的会员会有包年、包季等优惠套餐，算下来学习一天也就10多块钱
     </view>
   </view>
   <!-- <view class='cu-tabbar-height'></view> -->

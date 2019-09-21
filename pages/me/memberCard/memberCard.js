@@ -11,28 +11,28 @@ Page({
             type: 'WEEK',
             img: 'https://image.weilanwl.com/color2.0/plugin/sylb2244.jpg',
             url: '/indexes/indexes',
-            describe: '该项目是我个人开发的一款高颜值的微信小程序组件库。这个项目不仅有一些漂亮的基础元素'
+            describe: '周卡使用详情介绍（使用规则、计费模式）'
         },
             {
                 title: '月卡',
                 type: 'MONTH',
                 img: 'https://image.weilanwl.com/color2.0/plugin/wdh2236.jpg',
                 url: '/animation/animation',
-                describe: '该项目是我个人开发的一款高颜值的微信小程序组件库。这个项目不仅有一些漂亮的基础元素'
+                describe: '月卡使用详情介绍（使用规则、计费模式）'
             },
             {
                 title: '季卡',
                 type: 'QUARTER',
                 img: 'https://image.weilanwl.com/color2.0/plugin/qpct2148.jpg',
                 url: '/drawer/drawer',
-                describe: '该项目是我个人开发的一款高颜值的微信小程序组件库。这个项目不仅有一些漂亮的基础元素'
+                describe: '月卡使用详情介绍（使用规则、计费模式）'
             },
             {
                 title: '年卡',
                 type: 'YEAR',
                 img: 'https://image.weilanwl.com/color2.0/plugin/qpczdh2307.jpg',
                 url: '/verticalnav/verticalnav',
-                describe: '该项目是我个人开发的一款高颜值的微信小程序组件库。这个项目不仅有一些漂亮的基础元素'
+                describe: '月卡使用详情介绍（使用规则、计费模式）'
             }],
         numList: [{
             name: '领取'
